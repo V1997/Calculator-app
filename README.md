@@ -4,7 +4,11 @@ A modern, production-ready calculator application built with vanilla JavaScript,
 
 ## 🌐 Live Demo
 
-**Try it now:** [https://v1997.github.io/Calculator-app/](https://v1997.github.io/Calculator-app/)
+**🚀 Try it now:** [Calculator App](https://v1997.github.io/Calculator-app/)
+
+> **Note**: If the live demo shows a 404 error, the repository owner needs to enable GitHub Pages in the repository settings and set the source to "GitHub Actions".
+
+**🔧 Local Demo**: Run `npm run dev` for local testing
 
 ![Calculator UI Preview](https://via.placeholder.com/800x600/2c5364/ffffff?text=Enhanced+Calculator+UI)
 
@@ -77,6 +81,18 @@ npm run deploy:gh-pages
 # Or deploy to Netlify
 npm run deploy:netlify
 ```
+
+### 🔧 GitHub Pages Setup
+To enable the live demo:
+1. Go to your repository settings
+2. Navigate to "Pages" section
+3. Set "Source" to "GitHub Actions"
+4. The deployment workflow will automatically deploy on every push to main branch
+
+### 📱 Alternative Deployment
+- **Netlify**: Connect your GitHub repo for automatic deployment
+- **Vercel**: Import project directly from GitHub
+- **Firebase Hosting**: Use `firebase deploy` after setup
 
 ## 🎯 Live Demo
 
