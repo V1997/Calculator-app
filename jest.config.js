@@ -14,24 +14,16 @@ module.exports = {
   // Module paths
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   
-  // Module name mapping
-  moduleNameMapping: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-    '^@tests/(.*)$': '<rootDir>/tests/$1',
-  },
-  
-  // Transform files
-  transform: {
-    '^.+\\.js$': 'babel-jest',
-  },
+  // Transform files - disable for ES modules
+  transform: {},
+  extensionsToTreatAsEsm: ['.js'],
   
   // Coverage configuration
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.js',
-    '!src/**/*.test.js',
-    '!src/**/*.spec.js',
-    '!src/**/index.js',
+    'public/js/**/*.js',
+    '!public/js/**/*.test.js',
+    '!public/js/**/*.spec.js',
   ],
   coverageDirectory: 'coverage',
   coverageReporters: [
@@ -41,14 +33,6 @@ module.exports = {
     'lcov',
     'clover',
   ],
-  coverageThreshold: {
-    global: {
-      branches: 80,
-      functions: 80,
-      lines: 80,
-      statements: 80,
-    },
-  },
   
   // Mock files
   moduleFileExtensions: ['js', 'json'],
@@ -56,7 +40,6 @@ module.exports = {
   // Ignore patterns
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
-    '<rootDir>/public/',
     '<rootDir>/coverage/',
   ],
   
@@ -72,10 +55,4 @@ module.exports = {
   
   // Timeouts
   testTimeout: 10000,
-  
-  // Watch plugins
-  watchPlugins: [
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
 };

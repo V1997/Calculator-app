@@ -1,9 +1,7 @@
 {
   "name": "enhanced-calculator",
-  "version": "2.0.0",
-  "description": "A modern, feature-rich calculator with advanced functions, themes, and PWA capabilities",
-  "main": "public/index.html",
-  "type": "module",  "scripts": {
+  "version": "2.0.0",  "description": "A modern, feature-rich calculator with advanced functions, themes, and PWA capabilities",
+  "main": "public/index.html","scripts": {
     "dev": "serve -s public -l 3000 --cors",
     "dev:watch": "nodemon --watch src --exec \"npm run dev\"",
     "start": "npm run dev",
