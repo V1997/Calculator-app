@@ -17,11 +17,13 @@ module.exports = {
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
-  
-  // Coverage configuration
+    // Coverage configuration
   collectCoverage: true,
   collectCoverageFrom: [
+    'src/js/**/*.js',
     'public/js/**/*.js',
+    '!src/js/**/*.test.js',
+    '!src/js/**/*.spec.js',
     '!public/js/**/*.test.js',
     '!public/js/**/*.spec.js',
   ],
