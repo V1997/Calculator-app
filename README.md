@@ -2,11 +2,17 @@
 
 A modern, production-ready calculator application built with vanilla JavaScript, HTML5, and CSS3. Features advanced functionality, beautiful UI design, Progressive Web App capabilities, and follows professional development best practices.
 
-![Calculator Demo](docs/assets/calculator-demo.gif)
+## 🌐 Live Demo
+
+**Try it now:** [https://v1997.github.io/Calculator-app/](https://v1997.github.io/Calculator-app/)
+
+![Calculator UI Preview](https://via.placeholder.com/800x600/2c5364/ffffff?text=Enhanced+Calculator+UI)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://v1997.github.io/Calculator-app/)
+[![GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-blue.svg)](https://v1997.github.io/Calculator-app/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/yourusername/enhanced-calculator/graphs/commit-activity)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/V1997/Calculator-app/graphs/commit-activity)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![PWA](https://img.shields.io/badge/PWA-Ready-blue?logo=pwa)](https://web.dev/progressive-web-apps/)
 
@@ -74,7 +80,31 @@ npm run deploy:netlify
 
 ## 🎯 Live Demo
 
-🌐 **[Try the Live Calculator](https://yourusername.github.io/enhanced-calculator)**
+🌐 **[Try the Live Calculator](https://v1997.github.io/Calculator-app/)**
+
+### ✨ UI Features Showcase
+
+**🎨 Modern Design Elements:**
+- **Elegant Glass-morphism Effect**: Beautiful frosted glass appearance
+- **Dual Theme Support**: Switch between Dark Mode (🌙) and Light Mode (☀️)
+- **Smooth Animations**: Button press effects and seamless transitions
+- **Responsive Layout**: Perfect on desktop, tablet, and mobile devices
+- **Scientific Functions**: Advanced operations like √, %, ± with intuitive icons
+
+**📱 Interactive Elements:**
+- **History Panel**: Click 📋 to view and reuse previous calculations
+- **Theme Toggle**: Click 🌙/☀️ to switch between dark and light themes
+- **Keyboard Support**: Full keyboard navigation with visual feedback
+- **Error Handling**: Clear error messages with helpful suggestions
+- **PWA Ready**: Install as a native app on your device
+
+**🎮 Try These Features:**
+1. **Basic Math**: Click numbers and operators for calculations
+2. **Advanced Functions**: Try √16, 50%, or ±5 for scientific operations
+3. **History**: View your calculation history with the 📋 button
+4. **Themes**: Toggle between dark and light modes
+5. **Keyboard**: Use your keyboard for faster input
+6. **Install**: Your browser may prompt to install as an app!
 
 ## 📖 Documentation
 
