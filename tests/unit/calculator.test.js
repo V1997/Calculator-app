@@ -3,46 +3,80 @@
  * Tests core calculation functionality and error handling
  */
 
-import { Calculator } from '../../src/js/calculator.js';
+const { Calculator } = require('../../src/js/calculator.js');
 
 describe('Calculator', () => {
   let calculator;
-
   beforeEach(() => {
-    // Setup DOM
+    // Setup complete DOM structure that Calculator expects
     document.body.innerHTML = `
-      <div class="calculator">
-        <div class="display">
-          <div class="current-operand" data-current-operand>0</div>
-          <div class="previous-operand" data-previous-operand></div>
-        </div>
-        <div class="calculator-grid">
-          <button data-all-clear class="span-two">AC</button>
-          <button data-delete>DEL</button>
-          <button data-operation>÷</button>
-          <button data-number>7</button>
-          <button data-number>8</button>
-          <button data-number>9</button>
-          <button data-operation>×</button>
-          <button data-number>4</button>
-          <button data-number>5</button>
-          <button data-number>6</button>
-          <button data-operation>-</button>
-          <button data-number>1</button>
-          <button data-number>2</button>
-          <button data-number>3</button>
-          <button data-operation>+</button>
-          <button data-number>0</button>
-          <button data-number>.</button>
-          <button data-equals>=</button>
-        </div>
-      </div>
+      <main class="app">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon">🌙</span>
+        </button>
+        
+        <!-- Calculator -->
+        <section class="calculator" role="application" aria-label="Calculator">
+          <!-- Display -->
+          <div class="calculator-display">
+            <div class="display-history" id="history-display" aria-live="polite"></div>
+            <h1 id="main-display" aria-live="assertive">0</h1>
+            <div class="error-message" id="error-message" aria-live="assertive"></div>
+          </div>
+          
+          <!-- Scientific Functions Row -->
+          <div class="scientific-buttons">
+            <button class="function" value="sqrt" aria-label="Square root">√</button>
+            <button class="function" value="percent" aria-label="Percent">%</button>
+            <button class="function" value="plusminus" aria-label="Plus minus">±</button>
+            <button class="clear-all" id="clear-all-btn" aria-label="Clear all">AC</button>
+          </div>
+          
+          <!-- Main Button Grid -->
+          <div class="calculator-buttons">
+            <button class="operator" value="/" aria-label="Divide">÷</button>
+            <button class="operator" value="*" aria-label="Multiply">×</button>
+            <button class="operator" value="-" aria-label="Subtract">-</button>
+            <button class="operator" value="+" aria-label="Add">+</button>
+            
+            <button value="7" aria-label="Seven">7</button>
+            <button value="8" aria-label="Eight">8</button>
+            <button value="9" aria-label="Nine">9</button>
+            <button class="clear" id="clear-btn" aria-label="Clear">C</button>
+            
+            <button value="4" aria-label="Four">4</button>
+            <button value="5" aria-label="Five">5</button>
+            <button value="6" aria-label="Six">6</button>
+            <button class="backspace" id="backspace-btn" aria-label="Backspace">⌫</button>
+            
+            <button value="1" aria-label="One">1</button>
+            <button value="2" aria-label="Two">2</button>
+            <button value="3" aria-label="Three">3</button>
+            <button class="equal-sign operator" value="=" aria-label="Equals">=</button>
+            
+            <button value="0" class="zero" aria-label="Zero">0</button>
+            <button class="decimal" value="." aria-label="Decimal point">.</button>
+          </div>
+          
+          <!-- History Panel -->
+          <div class="history-panel" id="history-panel">
+            <div class="history-header">
+              <h3>History</h3>
+              <button class="clear-history" id="clear-history-btn" aria-label="Clear history">Clear</button>
+            </div>
+            <div class="history-list" id="history-list"></div>
+          </div>
+        </section>
+        
+        <!-- Toggle History Button -->
+        <button class="history-toggle" id="history-toggle" aria-label="Toggle history">
+          <span>📋</span>
+        </button>
+      </main>
     `;
 
-    calculator = new Calculator(
-      '[data-previous-operand]',
-      '[data-current-operand]'
-    );
+    calculator = new Calculator();
   });
 
   afterEach(() => {

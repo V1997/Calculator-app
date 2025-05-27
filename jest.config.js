@@ -13,10 +13,10 @@ module.exports = {
   
   // Module paths
   moduleDirectories: ['node_modules', '<rootDir>/src'],
-  
-  // Transform files - disable for ES modules
-  transform: {},
-  extensionsToTreatAsEsm: ['.js'],
+    // Transform files
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+  },
   
   // Coverage configuration
   collectCoverage: true,

@@ -372,3 +372,14 @@ document.addEventListener('touchend', (event) => {
   }
   lastTouchEnd = now;
 }, false);
+
+// Export for testing (CommonJS)
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { Calculator };
+}
+
+// Export for ES modules
+if (typeof window === 'undefined') {
+  // Node.js environment
+  global.Calculator = Calculator;
+}

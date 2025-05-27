@@ -1,5 +1,5 @@
 // Jest DOM matchers
-import '@testing-library/jest-dom';
+require('@testing-library/jest-dom');
 
 // Mock localStorage
 const localStorageMock = {
