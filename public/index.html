@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    <title>Enhanced Calculator</title>
+    <meta name="description" content="Modern calculator with advanced features" />    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/enhancements.css" />
+    <!-- Progressive Web App -->
+    <meta name="theme-color" content="#2c5364" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <main class="app">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+      
+      <!-- Calculator -->
+      <section class="calculator" role="application" aria-label="Calculator">
+        <!-- Display -->
+        <div class="calculator-display">
+          <div class="display-history" id="history-display" aria-live="polite"></div>
+          <h1 id="main-display" aria-live="assertive">0</h1>
+          <div class="error-message" id="error-message" aria-live="assertive"></div>
+        </div>
+        
+        <!-- Scientific Functions Row -->
+        <div class="scientific-buttons">
+          <button class="function" value="sqrt" aria-label="Square root">√</button>
+          <button class="function" value="percent" aria-label="Percent">%</button>
+          <button class="function" value="plusminus" aria-label="Plus minus">±</button>
+          <button class="clear-all" id="clear-all-btn" aria-label="Clear all">AC</button>
+        </div>
+        
+        <!-- Main Button Grid -->
+        <div class="calculator-buttons">
+          <button class="operator" value="/" aria-label="Divide">÷</button>
+          <button class="operator" value="*" aria-label="Multiply">×</button>
+          <button class="operator" value="-" aria-label="Subtract">-</button>
+          <button class="operator" value="+" aria-label="Add">+</button>
+          
+          <button value="7" aria-label="Seven">7</button>
+          <button value="8" aria-label="Eight">8</button>
+          <button value="9" aria-label="Nine">9</button>
+          <button class="clear" id="clear-btn" aria-label="Clear">C</button>
+          
+          <button value="4" aria-label="Four">4</button>
+          <button value="5" aria-label="Five">5</button>
+          <button value="6" aria-label="Six">6</button>
+          <button class="backspace" id="backspace-btn" aria-label="Backspace">⌫</button>
+          
+          <button value="1" aria-label="One">1</button>
+          <button value="2" aria-label="Two">2</button>
+          <button value="3" aria-label="Three">3</button>
+          <button class="equal-sign operator" value="=" aria-label="Equals">=</button>
+          
+          <button value="0" class="zero" aria-label="Zero">0</button>
+          <button class="decimal" value="." aria-label="Decimal point">.</button>
+        </div>
+        
+        <!-- History Panel -->
+        <div class="history-panel" id="history-panel">
+          <div class="history-header">
+            <h3>History</h3>
+            <button class="clear-history" id="clear-history-btn" aria-label="Clear history">Clear</button>
+          </div>
+          <div class="history-list" id="history-list"></div>
+        </div>
+      </section>
+      
+      <!-- Toggle History Button -->
+      <button class="history-toggle" id="history-toggle" aria-label="Toggle history">
+        <span>📋</span>
+      </button>
+    </main>      <!-- Script -->
+    <script src="js/calculator.js"></script>
+  </body>
+</html>

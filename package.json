@@ -1,26 +1,105 @@
 {
-  "name": "calculator",
-  "version": "1.0.0",
-  "description": "Calculator using the JS. ",
-  "main": "index.html",
+  "name": "enhanced-calculator",
+  "version": "2.0.0",
+  "description": "A modern, feature-rich calculator with advanced functions, themes, and PWA capabilities",
+  "main": "public/index.html",
+  "type": "module",
   "scripts": {
-    "start": "serve",
-    "build": "echo This is a static template, there is no bundler or bundling involved!"
+    "dev": "serve -s public -l 3000 --cors",
+    "dev:watch": "nodemon --watch src --exec \"npm run dev\"",
+    "start": "npm run dev",
+    "build": "npm run build:css && npm run build:js && npm run build:assets",
+    "build:css": "postcss src/css/main.css -o public/css/bundle.css",
+    "build:js": "esbuild src/js/calculator.js --bundle --outfile=public/js/bundle.js --minify",
+    "build:assets": "cp -r src/assets/* public/assets/",
+    "preview": "serve -s public -l 4000",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "test:unit": "jest --testPathPattern=tests/unit",
+    "test:integration": "jest --testPathPattern=tests/integration",
+    "test:e2e": "cypress run",
+    "test:e2e:open": "cypress open",
+    "test:a11y": "pa11y http://localhost:3000",
+    "test:perf": "lighthouse http://localhost:3000 --output json --output-path ./docs/lighthouse-report.json",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "format": "prettier --write src/**/*.{js,css,html}",
+    "format:check": "prettier --check src/**/*.{js,css,html}",
+    "deploy:gh-pages": "gh-pages -d public",
+    "deploy:netlify": "netlify deploy --prod --dir=public",
+    "clean": "rm -rf public/css/bundle.css public/js/bundle.js",
+    "prepare": "husky install",
+    "validate": "npm run lint && npm run format:check && npm run test",
+    "ci": "npm run validate && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codesandbox-app/static-template.git"
+    "url": "git+https://github.com/yourusername/enhanced-calculator.git"
   },
   "keywords": [
-    "calculator"
+    "calculator",
+    "pwa",
+    "progressive-web-app",
+    "javascript",
+    "es6",
+    "modern",
+    "responsive",
+    "dark-theme",
+    "light-theme",
+    "accessibility",
+    "wcag",
+    "a11y",
+    "scientific-calculator",
+    "history",
+    "offline",
+    "service-worker",
+    "vanilla-js",
+    "css3",
+    "html5"
   ],
-  "author": "Ives van Hoorne",
+  "author": {
+    "name": "Enhanced Calculator Developer",
+    "email": "developer@enhanced-calculator.dev",
+    "url": "https://github.com/yourusername"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codesandbox-app/static-template/issues"
+    "url": "https://github.com/yourusername/enhanced-calculator/issues"
   },
-  "homepage": "https://github.com/codesandbox-app/static-template#readme",
-  "devDependencies": {
-    "serve": "^11.2.0"
+  "homepage": "https://yourusername.github.io/enhanced-calculator",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],  "devDependencies": {
+    "serve": "^14.2.4",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "babel-jest": "^29.5.0",
+    "cypress": "^12.17.0",
+    "esbuild": "^0.18.0",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.0",
+    "gh-pages": "^5.0.0",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-watch-typeahead": "^2.2.2",
+    "lighthouse": "^10.2.0",
+    "nodemon": "^2.0.22",
+    "pa11y": "^6.2.3",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "prettier": "^2.8.8"
   }
 }
