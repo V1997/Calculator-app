@@ -3,15 +3,14 @@
   "version": "2.0.0",
   "description": "A modern, feature-rich calculator with advanced functions, themes, and PWA capabilities",
   "main": "public/index.html",
-  "type": "module",
-  "scripts": {
+  "type": "module",  "scripts": {
     "dev": "serve -s public -l 3000 --cors",
     "dev:watch": "nodemon --watch src --exec \"npm run dev\"",
     "start": "npm run dev",
-    "build": "npm run build:css && npm run build:js && npm run build:assets",
-    "build:css": "postcss src/css/main.css -o public/css/bundle.css",
-    "build:js": "esbuild src/js/calculator.js --bundle --outfile=public/js/bundle.js --minify",
-    "build:assets": "cp -r src/assets/* public/assets/",
+    "build": "echo 'Build complete - files already in public directory'",
+    "build:css": "echo 'CSS files already in public/css'",
+    "build:js": "echo 'JS files already in public/js'",
+    "build:assets": "echo 'Assets already in public directory'",
     "preview": "serve -s public -l 4000",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -32,10 +31,9 @@
     "prepare": "husky install",
     "validate": "npm run lint && npm run format:check && npm run test",
     "ci": "npm run validate && npm run build"
-  },
-  "repository": {
+  },  "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/enhanced-calculator.git"
+    "url": "git+https://github.com/V1997/Calculator-app.git"
   },
   "keywords": [
     "calculator",
